@@ -5,6 +5,7 @@ let conf = {w: prompt("Enter webhook url.")};
         }
 
         function setContent(val) { //setContent.apply(data, [val]);
+            if(val == "" || val == undefined || val == null) return alert("Cannot use an empty value!");
             let currentBody = JSON.parse(this.body);
             currentBody.content = val;
             this.body = JSON.stringify(currentBody);
@@ -13,6 +14,7 @@ let conf = {w: prompt("Enter webhook url.")};
         }
 
         function setUsername(val) { //setUsername.apply(data, [val]);
+            if(val == "" || val == undefined || val == null) return alert("Cannot use an empty value!");
             let currentBody = JSON.parse(this.body);
             currentBody.username = val;
             this.body = JSON.stringify(currentBody);
@@ -20,6 +22,7 @@ let conf = {w: prompt("Enter webhook url.")};
         }
 
         function setAvatar(val) { //setAvatar.apply(data, [val]);
+            if(val == "" || val == undefined || val == null) return alert("Cannot use an empty value!");
             let currentBody = JSON.parse(this.body);
             currentBody.avatar_url = val;
             this.body = JSON.stringify(currentBody);
@@ -126,4 +129,14 @@ let conf = {w: prompt("Enter webhook url.")};
         
         function formatter(val) {
             return val;
+        }
+
+        function sendIt() {
+            send()
+            .then(() => {
+                alert("Message successfully sent!");
+            })
+            .catch(e => {
+                alert(`Message was NOT sent \n${e}`);
+            })
         }

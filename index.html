@@ -10,11 +10,12 @@
     <body onload="loaded()">
 
             <div id="options"><br>
-                <button onclick="send()" class="button">Send</button><br><br>
-                <select id="webhook-selector" name="webhook-selector">
+                <button onclick="sendIt()" class="button">Send</button><br><br>
+                Your webhooks:<br>
+                <select id="webhook-selector" name="webhook-selector"> 
                     <!--dynamic options-->
                 </select><br><br>
-                <button class="button" id="new-webhook-button" onclick="newWebhook(prompt('Enter name'))">New webhook</button><br>
+                <button class="button" id="new-webhook-button" onclick="newWebhook(prompt('Enter name'))">New webhook</button><br><br>
                 <button class="button" id="set-content-button" onclick="setContent.apply(whooks[document.getElementById('webhook-selector').value], [document.getElementById('content-input').value])">Set content</button><br>
                 <button class="button" id="set-username-button" onclick="setUsername.apply(whooks[document.getElementById('webhook-selector').value], [prompt('Enter username')])">Set username</button><br>
                 <button class="button" id="set-avatar-button" onclick="setAvatar.apply(whooks[document.getElementById('webhook-selector').value], [prompt('Enter image url')])">Set avatar</button><br>

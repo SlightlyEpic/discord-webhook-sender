@@ -8,14 +8,19 @@
 }
 .button:hover{
     background-color: dodgerblue;
+    transition-duration: 200ms;
 }
 #webhook-selector{
     position: relative;
-    width: fit-content;
+    width: 60%;
     height: 30px;
     font: 15px;
     background-color: lightblue;
     border-radius: 10px;
+}
+#webhook-selector:hover{
+    background-color: turquoise;
+    transition-duration: 1000ms;
 }
 #options{
     position: absolute;
