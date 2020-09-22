@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Webhook sender</title>
+    </head>
+
+    <script src="./almostEverything.js"></script>
+
+    <body onload="loaded()">
+
+            <div id="options"><br>
+                <button onclick="send()" class="button">Send</button><br><br>
+                <select id="webhook-selector" name="webhook-selector">
+                    <!--dynamic options-->
+                </select><br><br>
+                <button class="button" id="new-webhook-button" onclick="newWebhook(prompt('Enter name'))">New webhook</button><br>
+                <button class="button" id="set-content-button" onclick="setContent.apply(whooks[document.getElementById('webhook-selector').value], [document.getElementById('content-input').value])">Set content</button><br>
+                <button class="button" id="set-username-button" onclick="setUsername.apply(whooks[document.getElementById('webhook-selector').value], [prompt('Enter username')])">Set username</button><br>
+                <button class="button" id="set-avatar-button" onclick="setAvatar.apply(whooks[document.getElementById('webhook-selector').value], [prompt('Enter image url')])">Set avatar</button><br>
+            </div>
+
+            <div id="in">
+                <textarea id="content-input" placeholder="Enter content..."></textarea>
+            </div>
+
+            <div id="out-container">
+                <div id="out">
+                    <img src="https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png" id="avatar">
+                    <div id="username"></div>
+                    <div id="content"></div>
+                </div>
+            </div>
+
+            <link rel="stylesheet" type="text/css" href="./everything-almostEverything.css">
+
+    </body>
+
+</html>
