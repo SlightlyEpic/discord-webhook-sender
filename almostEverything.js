@@ -128,7 +128,9 @@ let conf = {w: prompt("Enter webhook url.")};
         }
         
         function formatter(val) {
-            return val;
+            let out = val;
+            //out.replace(/<?>?/g, x => `\\${x}`);
+            return out;
         }
 
         function sendIt() {
